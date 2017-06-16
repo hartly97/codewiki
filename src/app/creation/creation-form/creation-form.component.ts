@@ -29,7 +29,8 @@ export class CreationFormComponent implements OnInit {
       ],
       ['ng4','ng2','mehtod','for loop'],
       'Beginner',
-      'Need to know'
+      'Need to know',
+      'https://pbs.twimg.com/profile_images/3005141692/dc8e1eb36b6cbd2b5726f63c50adf7f2.png'
     );
   }
 
@@ -42,7 +43,8 @@ export class CreationFormComponent implements OnInit {
       language: new Language ('',[]),
       tags:[],
       difficulty:'',
-      type:''
+      type:'',
+      imgUrl:''
     });
   }
 
