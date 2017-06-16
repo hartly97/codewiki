@@ -32,7 +32,7 @@ export const firebaseConfig = {
     CommentsModule,
     SnippetsModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
-    AngularFireModule
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
