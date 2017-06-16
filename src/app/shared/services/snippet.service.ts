@@ -11,7 +11,7 @@ export class SnippetService {
   constructor(public db: AngularFireDatabase) { }
 
 
-  getSnippets():FirebaseListObservable<any>{
+  getSnippets(){
     return this.db.list(this.node);
   }
 
