@@ -21,12 +21,8 @@ export class CreationFormComponent implements OnInit {
     this.snippet = new Snippet (
       'Cool new snippet',
       '*ngFor="let a of abc"',
-      'ianbrekelmans', 
-      [
-        new Language('angular',['2','4']),
-        new Language('html',['5']),
-        new Language('js',['5','6'])
-      ],
+      'ianbrekelmans',
+      'angularjs',
       ['ng4','ng2','mehtod','for loop'],
       'Beginner',
       'Need to know',
@@ -40,7 +36,7 @@ export class CreationFormComponent implements OnInit {
       name: '',
       code: '',
       username: '',
-      language: new Language ('',[]),
+      language: '',
       tags:[],
       difficulty:'',
       type:'',

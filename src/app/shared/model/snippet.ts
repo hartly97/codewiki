@@ -3,7 +3,7 @@ export class Snippet {
         public name?: string,
         public code?: string,
         public username?: string,
-        public languages?: Language[],
+        public language?: string,
         public tags?: string[],
         public difficulty?: string,
         public type?: string,

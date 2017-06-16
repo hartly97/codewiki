@@ -5,10 +5,11 @@
           </div>-->
           <div class="box" *ngFor="let snip of snippets">
             <article class="media">
-              <div class="media-left">
-                <figure class="image is-64x64">
-                  <img src="https://angular.io/assets/images/logos/angular/angular.png" alt="Image">
-                </figure>
+              <div class="media-left"  *ngIf="showCode">
+                <i class="devicon-angularjs-plain colored" style="font-size:50px"></i>
+                <!--<figure class="image is-64x64">
+                  <img src="{{snip.imgUrl}}" alt="Image">
+                </figure>-->
               </div>
               <div class="media-content">
                 <div class="content">
