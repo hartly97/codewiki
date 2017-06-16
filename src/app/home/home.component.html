@@ -2,19 +2,17 @@
     <div class="container">
       <div class="columns">
         <div class="column is-3">
-          <div class="card is-fullwidth">
+          <div class="card is-fullwidth" *ngIf="user">
             <header class="card-header">
-               
-            
             </header>
             <div class="card-content">
               <a class="card-avatar">
-                <img src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAcEAAAAJDIxZGI0ODAzLWY1NDQtNDc0OS05NTcwLWJiOGUxNjA4YjU2MQ.jpg" class="card-avatar-img">
+                <img [src]="user.avatar" class="card-avatar-img">
               </a>
 
               <div class="card-user">
                 <div class="card-user-name">
-                  <a href="#">Rocky Balboa</a>
+                  <a href="#">{{user.name}}</a>
                 </div>
                 <span>
                   <a href="#">@<span>thechamp</span></a>
