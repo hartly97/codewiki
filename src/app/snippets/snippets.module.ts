@@ -1,6 +1,9 @@
+import { FormsModule } from '@angular/forms';
 import { SnippetsComponent } from './snippets.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SnippetSearchComponent } from './snippet-search/snippet-search.component';
+import { SnippetListComponent } from './snippet-list/snippet-list.component';
 
 import 'prismjs/prism';
 import 'prismjs/components/prism-typescript';
@@ -11,14 +14,17 @@ import { PrismComponent } from 'angular-prism';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   declarations: [
     SnippetsComponent,
     PrismComponent
   ],
-  exports: [
-    SnippetsComponent
+  exports:[
+    SnippetsComponent,
+    SnippetSearchComponent,
+    SnippetListComponent
   ]
 })
 export class SnippetsModule { }

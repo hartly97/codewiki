@@ -1,27 +1,48 @@
 <div class="container">
   <div class="column">
     <section class="panel">
-      <p class="panel-heading">
-        Snippet Creation
-      </p>
-      <form [formGroup]="snippetForm" (ngSubmit)="onSubmit()">
-        <div class="panel-block">
+
+      <form [formGroup]="snippetForm">
+    
+          <div class="field">
           <label class="label">Snippet Name</label>
           <p class="control">
             <input class="input" type="text" formControlName="name" placeholder="add name">
           </p>
+          </div>
+          
+          <div class="field">
           <label class="label">Description</label>
           <p class="control">
             <textarea class="textarea" formControlName="description" placeholder="Textarea"></textarea>
           </p>
+          </div>
 
-
+          <label class="label">Tags</label>
+          <div class="field has-addons">
+              
+            <p class="control">
+              <input class="input" type="text" placeholder="Tags" #tag>
+            </p>
+            <p class="control">
+              <button class="button" (click)="addTag(tag.value)">
+                Add
+              </button>
+            </p>           
+          </div>
 
           <div class="field is-grouped">
-            <label class="label">Language</label>
+              <span class="tag is-info" *ngFor="let tag of tags" style="margin-bottom:5px">{{tag}}
+                <button class="delete is-small"></button>
+              </span>
+          </div>
+          
+          <label class="label">Category</label>
+          <div class="field is-grouped">
             <p class="control">
               <span class="select">
                 <select formControlName="language">
+                  <option disabled>Select language</option>
                   <option>angular</option>
                   <option>javascript</option>
                   <option>c#</option>
@@ -29,10 +50,10 @@
                 </select>
               </span>
             </p>
-            <label class="label">Difficulty</label>
             <p class="control">
               <span class="select">
                 <select formControlName="difficulty">
+                  <option disabled>Select difficulty</option>                  
                   <option>Beginner</option>
                   <option>Intermediate</option>
                   <option>Professional</option>
@@ -40,10 +61,10 @@
                 </select>
               </span>
             </p>
-            <label class="label">Type</label>
             <p class="control">
               <span class="select">
                 <select formControlName="type">
+                  <option disabled>Select type</option>
                   <option>Nice to know</option>
                   <option>Need to know</option>
                 </select>
@@ -51,33 +72,26 @@
             </p>
           </div>
 
+
+          <div class="field">
           <label class="label">Snippet code</label>
           <p class="control">
             <textarea class="textarea" formControlName="code" placeholder="Textarea"></textarea>
           </p>
-          <!--<p class="control">
-          <label class="checkbox">
-                <input type="checkbox">
-                Remember me
-              </label>
-        </p>
-        <p class="control">
-          <label class="radio">
-                <input type="radio" name="question">
-                Yes
-              </label>
-          <label class="radio">
-                <input type="radio" name="question">
-                No
-              </label>
-        </p>-->
-          <p class="control">
-            <button class="button is-primary">Submit</button>
-            <button class="button is-link">Cancel</button>
-          </p>
-        </div>
+          </div>
 
-      </form>
+          <div class="field is-grouped">
+            <p class="control">
+              <button class="button is-primary" (click)="save()">Submit</button>
+            </p>
+            <p class="control">
+              <button class="button is-link">Cancel</button>
+            </p>
+          </div>
+
+        </form>
+ 
+      
     </section>
   </div>
 </div>

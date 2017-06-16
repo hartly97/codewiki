@@ -1,19 +1,19 @@
 <nav class="nav has-shadow">
   <div class="container">
     <div class="nav-left">
-      <a class="nav-item is-tab is-active" [routerLink]="['home']"><i class="fa fa-home"></i> &nbsp; Home</a>
-      <a class="nav-item is-tab" [routerLink]="['snippets']"><i class="fa fa-search"></i> &nbsp; Search</a>
-      <a class="nav-item is-tab" [routerLink]="['home']"><i class="fa fa-envelope"></i> &nbsp; Contact</a>
-      <a class="nav-item is-tab" [routerLink]="['comments']"><i class="fa fa-envelope"></i> &nbsp; Comments</a>
+      <a class="nav-item is-tab" [routerLink]="['home']" [routerLinkActive]="['is-active']"><i class="fa fa-home"></i> &nbsp; Home</a>
+      <a class="nav-item is-tab" [routerLink]="['search']" [routerLinkActive]="['is-active']"><i class="fa fa-search"></i> &nbsp; Search</a>
+      <!--<a class="nav-item is-tab" [routerLink]="['home']"><i class="fa fa-envelope"></i> &nbsp; Contact</a>-->
+      <a class="nav-item is-tab" [routerLink]="['comments']" [routerLinkActive]="['is-active']"><i class="fa fa-envelope"></i> &nbsp; Comments</a>
     </div>
 
-    <div class="nav-center">
+    <!--<div class="nav-center">
       <a class="nav-item" href="#">
           <span class="icon">
             <i class="fa fa-grav"></i>
           </span>
         </a>
-    </div>
+    </div>-->
 
     <span class="nav-toggle">
         <span></span>
@@ -23,7 +23,7 @@
 
     <div class="nav-right nav-menu">
         <span class="nav-item">
-          <a class="button" [routerLink]="['creation']"  >
+          <a class="button" [routerLink]="['creation']" [routerLinkActive]="['creation']" >
             <span class="icon">
               <i class="fa fa-plus"></i>
             </span>
@@ -31,14 +31,14 @@
           </a>
         </span>
 
-        <span class="nav-item">
+        <!--<span class="nav-item">
           <a class="button" (click)="deleteSnippets()">
             <span class="icon">
               <i class="fa fa-plus"></i>
             </span>
             <span>Delete Snippets</span>
           </a>
-        </span>
+        </span>-->
 
         <!-- LOGIN -->
         <span class="nav-item" *ngIf="!user">
@@ -72,11 +72,11 @@
 
   </div>
 </nav>
-<section class="hero is-info bsa">
+<section class="hero is-info bsa" style="background-color:#3273dc">
   <div class="container" style="padding:30px">
-    <div class="columns is-vcentered">
-      <div class="column is-12">
-        <p class="title">Lightning <strong>Snippets</strong></p>
+    <div class="columns">
+      <div class="column is-12 has-text-centered">
+        <p class="title">Lightning <i class="fa fa-bolt"></i> <strong>Snippets</strong></p>
         <!--<p class="subtitle text-center">quick and clean</p>-->
       </div>
   </div>

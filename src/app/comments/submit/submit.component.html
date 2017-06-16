@@ -1,0 +1,29 @@
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="{{user?.avatar}}">
+    </p>
+  </figure>
+jmhgjngnhg
+  <div class = "container">
+    <section class="panel">
+      <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+        
+          <div>
+            <p class="control">
+              <textarea class="textarea" formControlName="text" placeholder="Add a comment..."></textarea>
+            </p>
+          </div>
+          <nav class="level">
+            <div class="level-left">
+              <div class="level-item">
+                <button class="button is-info" type = "submit">Submit</button>
+              </div>
+            </div>
+          </nav>
+        
+      </form>
+    </section>
+  </div>
+
+</article>

@@ -3,11 +3,10 @@
             <button class="delete" onclick="((this).parentNode.remove())"></button>
             Beware - these snippets could be to cool for school!
           </div>-->
-          <div class="box" *ngFor="let snip of snippets; let i = index">
+          <div class="box" *ngFor="let snip of snippets">
             <article class="media">
               <div class="media-left"  *ngIf="showCode">
-                <i class="devicon-angularjs-plain colored" *ngIf="i%2==0" style="font-size:50px"></i>
-                <i class="devicon-javascript-plain colored" *ngIf="i%2==1" style="font-size:50px"></i>
+                <i class="devicon-angularjs-plain colored" style="font-size:50px"></i>
                 <!--<figure class="image is-64x64">
                   <img src="{{snip.imgUrl}}" alt="Image">
                 </figure>-->
@@ -21,11 +20,13 @@
                   <p *ngIf="showCode">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
                   </p>
-                  <prism-block *ngIf="showCode" style="padding:10px">{{snip.code}}</prism-block>
+                  <pre *ngIf="showCode" style="padding:10px">{{snip.code}}</pre>
                 </div>
                 <nav class="level" *ngIf="showCode">
                   <div class="level-left">
                     <span class="tag is-info" *ngFor="let tag of snip.tags">{{tag}}</span>
+                    <span class="tag is-info">ng4</span>
+
                   </div>
 
                   <div class="level-right">
@@ -43,6 +44,6 @@
                 
               </div>
             </article>
-
+            
           </div>
         </div>

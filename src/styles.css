@@ -1,10 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+.nav-item a.is-tab.is-active, a.nav-item.is-tab.is-active {
+    border-bottom: 3px solid #fff;
+    border-top: 3px solid transparent;
+    color: #3273dc;
+}
+
+a {
+    color: #3273dc;
+}
+
+.tag.is-info {
+    background-color: #3273dc;
+    color: #fff;
+    margin-right:5px;
+    height: 20px;
+}
+
+.section {
+    background-color: #fff;
+    padding: 20px 20px;
+}
+
+.button.is-primary {
+    background-color: #3273dc;
+    color: #fff;
+}
+
+.panel-heading {
+    border-radius: 4px 4px 0 0;
+    color: #222324;
+    font-size: 26px;
+    font-weight: 300;
+    padding: 10px;
+}
+
 .section.main {
   background-color: #f5f8fa;
 }
+
+.hero{
+    background-color:#3273dc;
+    color:#fff;
+    margin:0px;
+}
 .card-header {
     /*background-image: url("http://placehold.it/600x200");*/
-    background-color: #42afe3;
+    background-color: #3273dc;
     background-position: 0 50%;
     background-size: 100% auto;
     border-bottom: 1px solid #e1e8ed;

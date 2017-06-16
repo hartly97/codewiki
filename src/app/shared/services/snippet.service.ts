@@ -15,6 +15,19 @@ export class SnippetService {
     return this.db.list(this.node);
   }
 
+  searchSnippet(searchTerm){
+    return this.db.list(this.node, {
+      query: {
+        orderByChild: 'name',
+        startAt: searchTerm,
+        endAt: searchTerm + '\uf8ff',
+        //once:'value'
+        //equalTo: searchTerm,
+      }
+    });
+  }
+
+
   getSnippet(){
 
   }

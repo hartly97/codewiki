@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+
+import { Injectable, Output } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from '../model/user';
@@ -7,10 +8,13 @@ import * as firebase from 'firebase/app';
 @Injectable()
 export class AuthService {
 
+
+
   constructor(private afAuth: AngularFireAuth) {}
 
   getUser(): User {
     const currentUser = this.afAuth.auth.currentUser;
+
 
     return {
       id: currentUser.uid,

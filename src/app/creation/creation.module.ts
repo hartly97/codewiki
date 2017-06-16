@@ -1,7 +1,6 @@
 import { CreationComponent } from './creation.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreationSnippetComponent } from './creation-snippet/creation-snippet.component';
 import { CreationFormComponent } from './creation-form/creation-form.component';
 import { ReactiveFormsModule, FormGroup, FormsModule } from '@angular/forms';
 
@@ -13,7 +12,7 @@ import { ReactiveFormsModule, FormGroup, FormsModule } from '@angular/forms';
   ],
   declarations: [
     CreationComponent, 
-    CreationSnippetComponent, CreationFormComponent,   
+    CreationFormComponent,   
     ],
   exports: [
     CreationComponent
