@@ -16,13 +16,20 @@
                   <p>
                     <strong>{{snip.name}}</strong> <small>@{{snip.username}}</small> <small style="float:right;">31m</small>
                   </p>
+                  <p><a href="#">#{{snip.difficulty}}</a>  <a href="#">#{{snip.type}}</a></p>
                   <p *ngIf="showCode">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
                   </p>
                   <pre *ngIf="showCode" style="padding:10px">{{snip.code}}</pre>
                 </div>
-                <nav class="level">
+                <nav class="level" *ngIf="showCode">
                   <div class="level-left">
+                    <span class="tag is-info" *ngFor="let tag of snip.tags">{{tag}}</span>
+                    <span class="tag is-info">ng4</span>
+
+                  </div>
+
+                  <div class="level-right">
                     <a class="level-item">
                       <span class="icon is-small"><i class="fa fa-reply"></i></span>
                     </a>
@@ -34,6 +41,7 @@
                     </a>
                   </div>
                 </nav>
+                
               </div>
             </article>
             

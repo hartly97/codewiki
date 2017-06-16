@@ -10,6 +10,13 @@ a {
     color: #3273dc;
 }
 
+.tag.is-info {
+    background-color: #3273dc;
+    color: #fff;
+    margin-right:5px;
+    height: 20px;
+}
+
 .section {
     background-color: #fff;
     padding: 20px 20px;
