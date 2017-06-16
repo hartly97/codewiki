@@ -1,7 +1,7 @@
 import { Snippet, Language } from './../../shared/model/snippet';
 import { SnippetService } from './../../shared/services/snippet.service';
 import { Component, OnInit } from '@angular/core';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'cwiki-creation-form',
@@ -10,8 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreationFormComponent implements OnInit {
   snippet: Snippet;
+  snippetForm: FormGroup;
 
-  constructor(private snippetService: SnippetService) { }
+  constructor(
+    private snippetService: SnippetService,
+    private fb: FormBuilder
+  ) { this.createForm();}
 
   ngOnInit() {
     this.snippet = new Snippet (
@@ -29,9 +33,26 @@ export class CreationFormComponent implements OnInit {
     );
   }
 
-  onSave(){
-    this.snippetService.pushSnippet(this.snippet);
-
+  createForm() {
+    this.snippetForm = this.fb.group({
+      //name: ['', Validators.required ],
+      name: '',
+      code: '',
+      username: '',
+      language: new Language ('',[]),
+      tags:[],
+      difficulty:'',
+      type:''
+    });
   }
+
+  onSubmit(){
+    const formModel = this.snippetForm.value;
+    
+    this.snippet.name = formModel.name;
+    this.snippet.code = formModel.code;
+
+    this.snippetService.pushSnippet(this.snippet);
+  }  
 
 }
