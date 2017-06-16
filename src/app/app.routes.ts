@@ -1,3 +1,4 @@
+import { SnippetSearchComponent } from './snippets/snippet-search/snippet-search.component';
 import { HomeComponent } from './home/home.component';
 import { SnippetsComponent } from './snippets/snippets.component';
 import { CommentsComponent } from './comments/comments.component';
@@ -14,6 +15,6 @@ export const ROUTES: Routes = [{
   }, {
     path: 'comments', component: CommentsComponent
   }, {
-    path: 'snippets', component: SnippetsComponent
+    path: 'search', component: SnippetSearchComponent
   }
 ];

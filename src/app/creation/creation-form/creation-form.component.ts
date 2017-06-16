@@ -61,7 +61,7 @@ export class CreationFormComponent implements OnInit {
 
   addTag(tag){
     this.tags.push(tag);
-    console.log(this.tags);
+    //console.log(this.tags);
   }
 
   save(){

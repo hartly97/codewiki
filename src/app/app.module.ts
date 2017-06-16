@@ -14,6 +14,7 @@ import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './shared/services/auth.service';
 
+
 // Must export the config
 export const firebaseConfig = {
     apiKey: "AIzaSyA-TK4IScTdIG7Ei9xQnqcYIcNo5Gyv1xA",
