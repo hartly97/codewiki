@@ -48,9 +48,11 @@ export class CreationFormComponent implements OnInit {
 
   onSubmit(){
     const formModel = this.snippetForm.value;
-    
+
     this.snippet.name = formModel.name;
     this.snippet.code = formModel.code;
+    this.snippet.difficulty = formModel.difficulty;
+    this.snippet.type = formModel.type;
 
     this.snippetService.pushSnippet(this.snippet);
   }  
