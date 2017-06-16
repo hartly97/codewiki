@@ -1,3 +1,4 @@
+import { SnippetService } from './shared/services/snippet.service';
 import { Component } from '@angular/core';
 import { AuthService } from './shared/services/auth.service';
 import { User } from './shared/model/user';
@@ -11,11 +12,15 @@ export class AppComponent {
   user: User;
   auth$;
 
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, private snippetService: SnippetService) {}
 
   ngOnInit() {
     this.getLoggedInUser();
     this.auth.watchForAuthChanges(() => this.getLoggedInUser());
+  }
+
+  deleteSnippets(){
+    this.snippetService.deleteSnippets()
   }
 
   getLoggedInUser() {

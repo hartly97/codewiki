@@ -7,6 +7,7 @@ export class Snippet {
         public tags?: string[],
         public difficulty?: string,
         public type?: string,
+        public imgUrl?: string,
     ){}
 }
 

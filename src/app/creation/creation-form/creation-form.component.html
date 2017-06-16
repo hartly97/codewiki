@@ -10,6 +10,10 @@
         <p class="control">
           <input class="input" type="text" formControlName="name" placeholder="add name">
         </p>
+        <label class="label">Description</label>
+        <p class="control">
+          <textarea class="textarea"  placeholder="Textarea"></textarea>
+        </p>
         <label class="label">Languages</label>
         <p class="control has-icon has-icon-right">
           <input class="input" type="text" formControlName="language" placeholder="enter code languages">
@@ -36,7 +40,7 @@
         </p>        
         <label class="label">Snippet code</label>
         <p class="control">
-          <textarea class="textarea" placeholder="Textarea"></textarea>
+          <textarea class="textarea" formControlName="code" placeholder="Textarea"></textarea>
         </p>
         <p class="control">
           <label class="checkbox">
@@ -59,6 +63,16 @@
           <button class="button is-link">Cancel</button>
         </p>
       </div>
+
+      <div data-role="rangeslider">
+        <label for="price-min">Price:</label>
+        <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+        <label for="price-max">Price:</label>
+        <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+      </div>
+
+      
+
       </form>
     </section>
   </div>
