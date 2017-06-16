@@ -30,6 +30,35 @@
             <span>New Snippet</span>
           </a>
         </span>
+
+        <!-- LOGIN -->
+        <span class="nav-item" *ngIf="!user">
+          <a class="button" (click)="login()">
+            <span class="icon">
+              <i class="fa fa-hand-spock-o"></i>
+            </span>
+            <span>Login</span>
+          </a>
+        </span>
+
+        <!-- LOGOUT -->
+        <span class="nav-item" *ngIf="user">
+          <a class="button">
+            <span class="icon">
+              <img [src]="user.avatar" width="30">
+            </span>
+            <span>{{ user.name }}</span>
+          </a>
+        </span>
+        <span class="nav-item" *ngIf="user">
+          <a class="button" (click)="logout()">
+            <span class="icon">
+              <i class="fa fa-hand-spock-o"></i>
+            </span>
+            <span>Logout</span>
+          </a>
+        </span>
+
       </div>
     </div>
   </nav>

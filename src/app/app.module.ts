@@ -11,7 +11,8 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
-
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthService } from './shared/services/auth.service';
 
 // Must export the config
 export const firebaseConfig = {
@@ -36,9 +37,13 @@ export const firebaseConfig = {
     SnippetsModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [SnippetService],
+  providers: [
+    AuthService,
+    SnippetService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
