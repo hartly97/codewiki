@@ -7,11 +7,13 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
