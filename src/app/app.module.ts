@@ -1,3 +1,4 @@
+import { SnippetService } from './shared/services/snippet.service';
 import { SnippetsModule } from './snippets/snippets.module';
 import { CommentsModule } from './comments/comments.module';
 import { CreationModule } from './creation/creation.module';
@@ -9,6 +10,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule} from 'angularfire2/database';
 
 // Must export the config
 export const firebaseConfig = {
@@ -32,9 +34,10 @@ export const firebaseConfig = {
     CommentsModule,
     SnippetsModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [SnippetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

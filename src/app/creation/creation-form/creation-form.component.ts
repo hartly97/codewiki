@@ -1,3 +1,4 @@
+import { SnippetService } from './../../shared/services/snippet.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreationFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private snippetService: SnippetService) { }
 
   ngOnInit() {
+  }
+
+  onSave(){
+    this.snippetService.pushSnippet();
+
   }
 
 }

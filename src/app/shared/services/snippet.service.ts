@@ -1,8 +1,29 @@
 import { Injectable } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Injectable()
 export class SnippetService {
 
-  constructor() { }
+  node: string = '/snippets'
+  snippets$: FirebaseListObservable<any>;
+
+  constructor(public db: AngularFireDatabase) { }
+
+
+  getSnippets():FirebaseListObservable<any>{
+    return this.db.list(this.node);
+  }
+
+  getSnippet(){
+
+  }
+
+  pushSnippet(){
+    this.db.list(this.node).push('test');
+  }
+
+  ngOnInit(){
+    //this.snippets$ = this.db.list('/snippets');  
+  }
 
 }
