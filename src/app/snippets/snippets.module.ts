@@ -19,12 +19,15 @@ import { PrismComponent } from 'angular-prism';
   ],
   declarations: [
     SnippetsComponent,
+    SnippetSearchComponent,
+    SnippetListComponent,
     PrismComponent
   ],
-  exports:[
+  exports: [
     SnippetsComponent,
     SnippetSearchComponent,
-    SnippetListComponent
+    SnippetListComponent,
+    PrismComponent
   ]
 })
 export class SnippetsModule { }
