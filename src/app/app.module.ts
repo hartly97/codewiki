@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
 
+
 // Must export the config
 export const firebaseConfig = {
     apiKey: "AIzaSyA-TK4IScTdIG7Ei9xQnqcYIcNo5Gyv1xA",

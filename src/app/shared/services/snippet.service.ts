@@ -1,3 +1,4 @@
+import { Snippet } from './../model/snippet';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
@@ -18,8 +19,8 @@ export class SnippetService {
 
   }
 
-  pushSnippet(){
-    this.db.list(this.node).push('test');
+  pushSnippet(snippet:Snippet){
+    this.db.list(this.node).push(snippet);
   }
 
   ngOnInit(){

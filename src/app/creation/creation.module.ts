@@ -3,10 +3,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CreationSnippetComponent } from './creation-snippet/creation-snippet.component';
 import { CreationFormComponent } from './creation-form/creation-form.component';
+import { ReactiveFormsModule, FormGroup, FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     CreationComponent, 
