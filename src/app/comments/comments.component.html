@@ -1,1 +1,12 @@
-<p>comments</p>
+<article class = "media">
+    <submit-comment (submitComment)="onParentCommentSubmitted($event)"></submit-comment>
+</article>
+
+
+<div *ngFor= "let singleComment of comments">
+        <comment-card [comment] = "singleComment"></comment-card>
+</div>
+
+<div>
+    <comment-list></comment-list>
+</div>
