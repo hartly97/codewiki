@@ -19,7 +19,7 @@
                   <p *ngIf="showCode">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
                   </p>
-                  <pre *ngIf="showCode" style="padding:10px">{{snip.code}}</pre>
+                  <prism-block *ngIf="showCode" style="padding:10px">{{snip.code}}</prism-block>
                 </div>
                 <nav class="level">
                   <div class="level-left">
@@ -36,6 +36,6 @@
                 </nav>
               </div>
             </article>
-            
+
           </div>
         </div>
