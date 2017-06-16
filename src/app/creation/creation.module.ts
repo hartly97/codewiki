@@ -2,6 +2,7 @@ import { CreationComponent } from './creation.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CreationSnippetComponent } from './creation-snippet/creation-snippet.component';
+import { CreationFormComponent } from './creation-form/creation-form.component';
 
 @NgModule({
   imports: [
@@ -9,7 +10,7 @@ import { CreationSnippetComponent } from './creation-snippet/creation-snippet.co
   ],
   declarations: [
     CreationComponent, 
-    CreationSnippetComponent,   
+    CreationSnippetComponent, CreationFormComponent,   
     ],
   exports: [
     CreationComponent
