@@ -64,7 +64,7 @@ export class CreationFormComponent implements OnInit {
     console.log(this.tags);
   }
 
-  onSubmit(){
+  save(){
     const formModel = this.snippetForm.value;
 
     this.snippet.name = formModel.name;
