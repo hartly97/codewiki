@@ -1,8 +1,8 @@
     <div class="column is-12">
-          <div class="notification is-danger">
+          <!--<div class="notification is-danger">
             <button class="delete" onclick="((this).parentNode.remove())"></button>
             Beware - these snippets could be to cool for school!
-          </div>
+          </div>-->
           <div class="box" *ngFor="let snip of snippets">
             <article class="media">
               <div class="media-left">
@@ -14,10 +14,11 @@
                 <div class="content">
                   <p>
                     <strong>{{snip.name}}</strong> <small>@{{snip.username}}</small> <small style="float:right;">31m</small>
-                    <br>
+                  </p>
+                  <p *ngIf="showCode">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
                   </p>
-                  <pre style="padding:10px">{{snip.code}}</pre>
+                  <pre *ngIf="showCode" style="padding:10px">{{snip.code}}</pre>
                 </div>
                 <nav class="level">
                   <div class="level-left">

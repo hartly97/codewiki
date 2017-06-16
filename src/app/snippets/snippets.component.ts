@@ -1,6 +1,6 @@
 import { Snippet } from './../shared/model/snippet';
 import { SnippetService } from './../shared/services/snippet.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'cwiki-snippets',
@@ -10,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class SnippetsComponent implements OnInit{
   title = 'comments';
   snippets: Snippet
+
+  @Input() showCode:boolean;
   
   constructor(private snippetService:SnippetService){
   }
