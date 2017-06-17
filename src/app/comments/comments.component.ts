@@ -42,17 +42,14 @@ export class CommentsComponent{
    constructor(
      private commentService: CommentService,
      private auth: AuthService
-  ){
-    console.log("loaded commentservice");
-   }
+  ){}
 
   ngOnInit(){
 
     // obtain logged in user information 
     this.user = this.getLoggedInUser();
      console.log('comments component user test:', this.user);
-     //console.log(this.user);
-
+     
     this.commentService.getComments()
       .subscribe(comments => {
         this.comments = comments;
@@ -64,6 +61,8 @@ export class CommentsComponent{
   getLoggedInUser() {
     if (this.auth.isLoggedIn) this.user = this.auth.getUser();
     else this.user = null;
+
+    console.log('comments component auth test:', this.auth.isLoggedIn);
   }
 
   getCommentByUser(comments,tUser){
