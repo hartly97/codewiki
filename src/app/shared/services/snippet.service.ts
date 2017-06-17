@@ -28,8 +28,13 @@ export class SnippetService {
   }
 
 
-  getSnippet(){
-
+  getSnippet(id){
+    return this.db.list(this.node, {
+      query: {
+        orderByKey:id,
+        equalTo:id
+      }
+    });
   }
 
   pushSnippet(snippet:Snippet){

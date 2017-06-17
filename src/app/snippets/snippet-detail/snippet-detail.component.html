@@ -1,0 +1,138 @@
+    <div class="container">
+  <div class="columns">
+    <div class="column is-8" *ngIf="snip">
+          <!--<div class="notification is-danger">
+            <button class="delete" onclick="((this).parentNode.remove())"></button>
+            Beware - these snippets could be to cool for school!
+          </div>-->
+          <div class="box">
+            <article class="media">
+              <div class="media-left">
+                
+                <i class="devicon-angularjs-plain colored" *ngIf="snip.language=='typescript'" style="font-size:50px"></i>
+                <i class="devicon-javascript-plain colored" *ngIf="snip.language=='javascript'" style="font-size:50px"></i>
+                <!--<figure class="image is-64x64">
+                  <img src="{{snip.imgUrl}}" alt="Image">
+                </figure>-->
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  
+                    <p>
+                      <strong>{{snip.name}}</strong> <small>@{{snip.username}}</small> <small style="float:right;">31m</small>
+                    </p>
+                  <p><a href="#">#{{snip.difficulty}}</a>  <a href="#">#{{snip.type}}</a></p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                  </p>
+                  
+                  <prism-block
+                  
+                    style="padding:10px"
+                    [code]="snip.code"
+                    [language]="snip.language">
+                  </prism-block>
+
+
+                </div>
+                <nav class="level">
+                  <div class="level-left">
+                    <span class="tag is-info" *ngFor="let tag of snip.tags">{{tag}}</span>
+                    <span class="tag is-info">ng4</span>
+
+                  </div>
+
+                  <div class="level-right">
+                    <a class="level-item">
+                      <span class="icon is-small"><i class="fa fa-reply"></i></span>
+                    </a>
+                    <a class="level-item">
+                      <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+                    </a>
+                    <a class="level-item">
+                      <span class="icon is-small"><i class="fa fa-heart"></i></span>
+                    </a>
+                  </div>
+                </nav>
+                
+              </div>
+            </article>
+            
+          </div>
+        </div>
+
+            <div class="column is-4">
+          <div class="box">
+            <p><span class="title is-5">Snip in other languages</span></p>
+            <hr>
+            <article class="media">
+              <div class="media-left">
+                <i class="devicon-python-plain colored" style="font-size:50px"></i>
+                <!--<figure class="image is-64x64">
+                  <img src="{{snip.imgUrl}}" alt="Image">
+                </figure>-->
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  
+                    <p>
+                      <strong>Python</strong> <small style="float:right;">31m</small>
+                    </p>
+                  
+
+                  <pre style="padding:10px">{{snip.code}}</pre>
+                </div>
+
+                
+              </div>
+            </article>
+          <article class="media">
+              <div class="media-left">
+                <i class="devicon-dot-net-plain colored" style="font-size:50px"></i>
+                <!--<figure class="image is-64x64">
+                  <img src="{{snip.imgUrl}}" alt="Image">
+                </figure>-->
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  
+                    <p>
+                      <strong>Dotnet</strong> <small style="float:right;">31m</small>
+                    </p>
+                  
+
+                  <pre style="padding:10px">{{snip.code}}</pre>
+                </div>
+
+                
+              </div>
+            </article>
+          <article class="media">
+              <div class="media-left">
+                <i class="devicon-php-plain colored" style="font-size:50px"></i>
+                <!--<figure class="image is-64x64">
+                  <img src="{{snip.imgUrl}}" alt="Image">
+                </figure>-->
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  
+                    <p>
+                      <strong>PHP</strong> <small style="float:right;">31m</small>
+                    </p>
+                  
+
+                  <pre style="padding:10px">{{snip.code}}</pre>
+                </div>
+
+                
+              </div>
+            </article>                        
+
+          </div>
+
+          
+        </div>
+
+  </div>
+    </div>

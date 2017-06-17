@@ -1,3 +1,5 @@
+import { ROUTES } from './../app.routes';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SnippetsComponent } from './snippets.component';
 import { NgModule } from '@angular/core';
@@ -11,23 +13,27 @@ import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-css';
 import 'prismjs/components/prism-markup';
 import { PrismComponent } from 'angular-prism';
+import { SnippetDetailComponent } from './snippet-detail/snippet-detail.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   declarations: [
     SnippetsComponent,
     SnippetSearchComponent,
     SnippetListComponent,
-    PrismComponent
+    PrismComponent,
+    SnippetDetailComponent
   ],
   exports: [
     SnippetsComponent,
     SnippetSearchComponent,
     SnippetListComponent,
-    PrismComponent
+    PrismComponent,
+    SnippetDetailComponent
   ]
 })
 export class SnippetsModule { }
