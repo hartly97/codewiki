@@ -14,6 +14,7 @@ export class CreationFormComponent implements OnInit {
   snippet: Snippet;
   snippetForm: FormGroup;
   user:User;
+  edited = false;
   
   tags:string[]=[];
   
@@ -75,6 +76,9 @@ export class CreationFormComponent implements OnInit {
     this.snippet.tags = this.tags;
     this.snippet.language = formModel.language;
     this.snippetService.pushSnippet(this.snippet);
+    this.edited = true;
+    
+    setTimeout(function() {this.edited = false;}.bind(this), 3000);
 
     this.createForm();
   }  
