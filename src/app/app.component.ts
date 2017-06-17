@@ -16,7 +16,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.getLoggedInUser();
-    this.auth.watchForAuthChanges(() => this.getLoggedInUser);
+    this.auth.watchForAuthChanges(() => this.getLoggedInUser());
   }
 
   deleteSnippets(){
