@@ -9,25 +9,26 @@
     </div>
   </figure>
 
-  <div class = "container">
-    <section class="panel">
+
+  
       <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
-        
-          <div>
+        <div class="field">
+          <p class="control">
+            <textarea class="textarea" formControlName="text" placeholder="Add a comment..."></textarea>
+          </p>
+        </div>
+          <div class="field is-grouped">
             <p class="control">
-              <textarea class="textarea" formControlName="text" placeholder="Add a comment..."></textarea>
+              <button class="button is-primary">Submit</button>
+            </p>
+            <p class="control">
+              <button class="button is-link">Cancel</button>
             </p>
           </div>
-          <nav class="level">
-            <div class="level-left">
-              <div class="level-item">
-                <button class="button is-info" type = "submit">Submit</button>
-              </div>
-            </div>
-          </nav>
+
         
       </form>
-    </section>
-  </div>
+
+
 
 </article>

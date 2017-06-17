@@ -43,11 +43,11 @@ export class CommentListComponent implements OnInit {
 
   ngOnInit() {
     // split comments into main comment and sub-comment
-    this.splitComment(this.overallComment);
+    //this.splitComment(this.overallComment);
 
     // load the comment 
-    console.log(this.replyComments);
-    console.log('comment-list component user test:', this.user);
+    //console.log(this.replyComments);
+    //console.log('comment-list component user test:', this.user);
   }
 
   splitComment(sComment: Mcomment){
@@ -57,7 +57,7 @@ export class CommentListComponent implements OnInit {
   }
 
   updateReply(){
-    this.needReplyBox = true;
+    //this.needReplyBox = true;
   }
 
   onChildCommentSubmitted(event) {

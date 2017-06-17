@@ -16,9 +16,15 @@ import { User } from '../shared/model/user';
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent{
+  @Input() snippetKey: string;
   user;
-  comments:Comment;
+  comments:any;
   tComment;  // this is the targeted comment to pass onto comment-card
+
+  ngOnChanges(){
+    this.commentService.getCommentsNew(this.snippetKey)
+      .subscribe(comments => this.comments = comments);
+  }
 
   // data for testing
   // comments = [
@@ -48,21 +54,23 @@ export class CommentsComponent{
 
     // obtain logged in user information 
     this.user = this.getLoggedInUser();
-     console.log('comments component user test:', this.user);
+    this.auth.watchForAuthChanges(() => this.getLoggedInUser());
+    // console.log('comments component user test:', this.user);
      
     this.commentService.getComments()
       .subscribe(comments => {
         this.comments = comments;
-        console.log(this.comments);
+        //console.log(this.comments);
       });
-    console.log(this.comments);
+    //console.log(this.comments);
   }
+
 
   getLoggedInUser() {
     if (this.auth.isLoggedIn) this.user = this.auth.getUser();
     else this.user = null;
 
-    console.log('comments component auth test:', this.auth.isLoggedIn);
+    //console.log('comments component auth test:', this.auth.isLoggedIn);
   }
 
   getCommentByUser(comments,tUser){
@@ -89,9 +97,11 @@ export class CommentsComponent{
   getCommentByDate(){
   }
 
-  onParentCommentSubmitted(event) {
+  onParentCommentSubmitted(comment:Comment) {
     // we will create a top level comment
-    this.commentService.pushComment(event);
+    comment.snippetKey = this.snippetKey;
+    this.commentService.pushComment(comment);
+    console.log(event)
   }
   
 }

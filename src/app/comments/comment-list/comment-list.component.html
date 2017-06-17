@@ -15,20 +15,20 @@
       </p>
     </div>
 
-    <div *ngIf = "replyComments.length > 1">
+    <!--<div *ngIf = "replyComments.length > 1">
       <div *ngFor= "let singleComment of replyComments">
           <comment-card [comment] = "singleComment"></comment-card>
       </div>
-    </div>
+    </div>-->
 
   </div>
 </article>
 
-<div *ngIf = "needReplyBox">
+<!--<div *ngIf = "needReplyBox">
 
     <submit-comment (submitComment) = "onChildCommentSubmitted($event)" ></submit-comment>
   
-</div>
+</div>-->
 
 
 

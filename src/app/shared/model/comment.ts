@@ -10,7 +10,8 @@ export class Comment{
     public text:string,
     public user: User,  // object {name, email}
     public upvotes, // number
-    public date:string // string for piping later
+    public date:string, // string for piping later
+    public snippetKey:string
   ){}
 }
 

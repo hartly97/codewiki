@@ -11,7 +11,7 @@ import { Component, OnInit,Input } from '@angular/core';
 export class SnippetDetailComponent implements OnInit {
 
   @Input() searchString: string;
-  snip:Snippet;
+  snip:any;
   
   constructor(private snippetService:SnippetService, private route: ActivatedRoute){
   }
@@ -21,8 +21,7 @@ export class SnippetDetailComponent implements OnInit {
 
   ngOnInit(){
     this.sub = this.route.params.subscribe(params => {
-    this.id = params['id']; 
-    console.log(this.id);
+    this.id = params['id'];
   });
   
     this.getSnippet(this.id)
@@ -32,7 +31,7 @@ export class SnippetDetailComponent implements OnInit {
     this.snippetService.getSnippet(id)
     .subscribe(snippet => {
       this.snip = snippet[0];
-      console.log(this.snip);
+      console.log(this.snip.$key);
     });
   }
 }

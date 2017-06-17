@@ -15,6 +15,15 @@ export class CommentService {
     return this.db.list(this.comments);
   }
 
+  getCommentsNew(searchTerm){
+    return this.db.list(this.comments, {
+      query: {
+        orderByKey: searchTerm,
+        equalTo: searchTerm
+      }
+    });
+  }
+
   pushComment(comment:Comment){
     this.db.list(this.comments).push(comment);
   }
