@@ -1,10 +1,14 @@
 <article class="media">
   <figure class="media-left">
-    <p class="image is-64x64">
-      <img src="{{user?.avatar}}">
-    </p>
+    
+
+    <div class="image is-64x64">
+      <div *ngIf = "user then user_avatar else default_avatar"></div>
+      <ng-template #user_avatar><img src="{{user?.avatar}}"></ng-template>
+      <ng-template #default_avatar><img src="http://www.fuse.tv/image/55d4f80bf3b95f1f3a000009/670/413/crop/sailor-venus-sailor-moon-quiz.jpg"></ng-template>
+    </div>
   </figure>
-jmhgjngnhg
+
   <div class = "container">
     <section class="panel">
       <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">

@@ -16,7 +16,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.getLoggedInUser();
-    this.auth.watchForAuthChanges(() => this.getLoggedInUser());
+    this.auth.watchForAuthChanges(() => this.getLoggedInUser);
   }
 
   deleteSnippets(){
@@ -26,6 +26,8 @@ export class AppComponent {
   getLoggedInUser() {
     if (this.auth.isLoggedIn) this.user = this.auth.getUser();
     else this.user = null;
+
+    console.log('app component user test:', this.user);
   }
 
   // firebase login

@@ -15,7 +15,8 @@ export class AuthService {
   getUser(): User {
     const currentUser = this.afAuth.auth.currentUser;
 
-
+    if (!currentUser) return null;
+    
     return {
       id: currentUser.uid,
       avatar: currentUser.photoURL,

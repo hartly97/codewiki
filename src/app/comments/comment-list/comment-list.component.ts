@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Comment, Mcomment} from '../../shared/model/comment';
 import {CommentCardComponent} from '../comment-card/comment-card.component';
+import {User} from '../../shared/model/user';
 
 @Component({
   selector: 'comment-list',
@@ -10,6 +11,8 @@ import {CommentCardComponent} from '../comment-card/comment-card.component';
 export class CommentListComponent implements OnInit {
 
   @Input() comment;
+  @Input() user:User;
+
   overallComment = {main:{text:"jkhcjsklcndsjk",
                        user:{id: "test",
                              name: "hello gello",
@@ -44,6 +47,7 @@ export class CommentListComponent implements OnInit {
 
     // load the comment 
     console.log(this.replyComments);
+    console.log('comment-list component user test:', this.user);
   }
 
   splitComment(sComment: Mcomment){
