@@ -12,11 +12,7 @@ import {AuthService} from '../../shared/services/auth.service';
 export class SubmitComponent implements OnInit {
   @Input() user: User;
   @Output() submitComment = new EventEmitter();
-
-  // initialize comment
-  comment: Comment;
   commentForm: FormGroup;
-  submitted = false;
 
   constructor(
     private commentService: CommentService,
@@ -25,9 +21,8 @@ export class SubmitComponent implements OnInit {
     this.createForm(); 
   }
 
-
   ngOnInit() {
-    
+    console.log('submit component user test:',this.user);
   }
 
   // creates and initialize a form
@@ -44,6 +39,7 @@ export class SubmitComponent implements OnInit {
     // obtain cached data for user
     if (!this.user) {
       alert("you need to login to comment!");
+      return;
     }
 
     this.submitComment.emit(this.commentForm.value);

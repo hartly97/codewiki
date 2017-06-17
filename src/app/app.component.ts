@@ -26,6 +26,8 @@ export class AppComponent {
   getLoggedInUser() {
     if (this.auth.isLoggedIn) this.user = this.auth.getUser();
     else this.user = null;
+
+    console.log('app component user test:', this.user);
   }
 
   // firebase login

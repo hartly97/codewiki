@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import {AngularFireDatabase, 
         FirebaseListObservable
       } from 'angularfire2/database';
@@ -16,7 +16,7 @@ import { User } from '../shared/model/user';
   styleUrls: ['./comments.component.css']
 })
 export class CommentsComponent{
-  user: User;
+  user;
   comments:Comment;
   tComment;  // this is the targeted comment to pass onto comment-card
 
@@ -49,8 +49,9 @@ export class CommentsComponent{
   ngOnInit(){
 
     // obtain logged in user information 
-    this.user = this.auth.getUser();
-    this.auth.watchForAuthChanges(() => this.getLoggedInUser());
+    this.user = this.getLoggedInUser();
+     console.log('comments component user test:', this.user);
+     //console.log(this.user);
 
     this.commentService.getComments()
       .subscribe(comments => {

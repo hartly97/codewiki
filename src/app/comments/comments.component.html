@@ -1,5 +1,5 @@
 <article class = "media">
-    <submit-comment (submitComment)="onParentCommentSubmitted($event)"></submit-comment>
+    <submit-comment [user] = "user" (submitComment)="onParentCommentSubmitted($event)"></submit-comment>
 </article>
 
 
@@ -8,5 +8,5 @@
 </div>
 
 <div>
-    <comment-list></comment-list>
+    <comment-list [user] = "user"></comment-list>
 </div>
