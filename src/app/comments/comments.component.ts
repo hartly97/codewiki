@@ -1,5 +1,5 @@
 import { Component, Input, Output } from '@angular/core';
-import {AngularFireDatabase, 
+import {AngularFireDatabase,
         FirebaseListObservable
       } from 'angularfire2/database';
 import {Comment, Mcomment} from '../shared/model/comment';
@@ -30,17 +30,17 @@ export class CommentsComponent{
   // comments = [
   //   { text:"This is awesome!!!",
   //   user: {name:"Steve Jobs", email: "steve@apple.com"},  // this could be a github ID, or object, depending on how we design later
-  //   upvotes: 100, 
+  //   upvotes: 100,
   //   date: "06/16/2017"},
   //   { text:"I agree!!!",
   //   user: {name: "Steve Wozniak", email:"therealsteve@apple.com"},  // this could be a github ID, or object, depending on how we design later
-  //   upvotes: 200, 
+  //   upvotes: 200,
   //   date: "06/16/2017"},
   //   { text:"this is mindblowing",
   //   user: {name:"Tim Cook", email:"tim@apple.com"},  // this could be a github ID, or object, depending on how we design later
-  //   upvotes: 2, 
+  //   upvotes: 2,
   //   date: "06/16/2017"}
-  // ] 
+  // ]
 
   // this is for grabing data from firebase
   // comments: FirebaseListObservable<Comment[]>; // grab the comments array from firebase
@@ -52,11 +52,11 @@ export class CommentsComponent{
 
   ngOnInit(){
 
-    // obtain logged in user information 
+    // obtain logged in user information
     this.user = this.getLoggedInUser();
     this.auth.watchForAuthChanges(() => this.getLoggedInUser());
     // console.log('comments component user test:', this.user);
-     
+
     this.commentService.getComments()
       .subscribe(comments => {
         this.comments = comments;
@@ -100,8 +100,9 @@ export class CommentsComponent{
   onParentCommentSubmitted(comment:Comment) {
     // we will create a top level comment
     comment.snippetKey = this.snippetKey;
+    comment.user = this.user;
     this.commentService.pushComment(comment);
     console.log(event)
   }
-  
+
 }
