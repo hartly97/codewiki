@@ -1,11 +1,5 @@
-<submit-comment [user] = "user" (submitComment)="onParentCommentSubmitted($event)"></submit-comment>
-
-
+<submit-comment [user] = "user" (submitComment)="onParentCommentSubmitted($event)" style="margin-bottom: 50px;display: block;"></submit-comment>
 
 <div *ngFor= "let singleComment of comments">
-        <comment-card [comment] = "singleComment"></comment-card>
-</div>
-
-<div>
-    <comment-list [user] = "user"></comment-list>
+  <comment-card [comment] = "singleComment"></comment-card>
 </div>

@@ -1,23 +1,26 @@
-<div class="column" >
-<article class="media">
+<article class="media" style="margin-bottom: 20px">
   <figure class="media-left">
     <p class="image is-64x64">
-      <img src="{{comment.user.avatar}}">
+      <img src="{{ comment.user.avatar }}" *ngIf="comment.user.avatar">
+      <img src="http://lorempixel.com/50/50" *ngIf="!comment.user.avatar">
     </p>
   </figure>
   <div class="media-content">
     <div class="content">
       <p>
-        <strong>{{comment.user.name}}</strong> <small>{{comment.user.email}}</small> <small>31m</small>
+        <strong>{{comment.user.name}}</strong>
+        <small>{{comment.user.email}}</small>
         <br>
         {{comment.text}}
       </p>
     </div>
-    <nav class="level is-mobile">
+    <nav class="level">
       <div class="level-left">
 
         <a class="level-item">
-          <button class="icon is-small" (click) = "updateUpvotes()"><i class="fa fa-heart"></i></button>
+          <button class="button is-link is-small" (click) = "updateUpvotes()">
+            Like
+          </button>
         </a>
         <a class="level-item">
           <div>{{comment.upvotes}}</div>
@@ -27,4 +30,3 @@
   </div>
 
 </article>
-</div>

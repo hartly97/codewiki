@@ -1,6 +1,6 @@
 <article class="media">
   <figure class="media-left">
-    
+
 
     <div class="image is-64x64">
       <div *ngIf = "user then user_avatar else default_avatar"></div>
@@ -9,8 +9,8 @@
     </div>
   </figure>
 
-
-  
+  <div class="media-content">
+    <div class="content">
       <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
         <div class="field">
           <p class="control">
@@ -26,9 +26,10 @@
             </p>
           </div>
 
-        
+
       </form>
 
 
-
+  </div>
+  </div>
 </article>
