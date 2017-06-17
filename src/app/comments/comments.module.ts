@@ -15,7 +15,7 @@ import { CommentListComponent } from './comment-list/comment-list.component';
     FormsModule
   ],
   declarations: [CommentsComponent, SubmitComponent, CommentCardComponent, CommentListComponent],
-  exports: [CommentsComponent],
+  exports: [CommentsComponent, SubmitComponent, CommentCardComponent, CommentListComponent],
   providers:[CommentService]
 })
 export class CommentsModule { 

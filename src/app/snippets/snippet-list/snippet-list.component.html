@@ -14,7 +14,7 @@
               <div class="media-content">
                 <div class="content">
                   <p>
-                    <strong>{{snip.name}}</strong> <small>@{{snip.username}}</small> <small style="float:right;">31m</small>
+                    <strong><a [routerLink]="['../snippet',snip.$key]">{{snip.name}}</a></strong> <small>@{{snip.username}}</small> <small style="float:right;">31m</small>
                   </p>
                   <p><a href="#">#{{snip.difficulty}}</a>  <a href="#">#{{snip.type}}</a></p>
                   <p *ngIf="showCode">

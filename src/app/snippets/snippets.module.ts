@@ -1,3 +1,4 @@
+import { CommentsModule } from './../comments/comments.module';
 import { ROUTES } from './../app.routes';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +20,8 @@ import { SnippetDetailComponent } from './snippet-detail/snippet-detail.componen
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    RouterModule.forRoot(ROUTES, { useHash: true }),
+    CommentsModule
   ],
   declarations: [
     SnippetsComponent,
