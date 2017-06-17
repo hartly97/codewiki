@@ -17,12 +17,12 @@ import { AuthService } from './shared/services/auth.service';
 
 // Must export the config
 export const firebaseConfig = {
-    apiKey: "AIzaSyA-TK4IScTdIG7Ei9xQnqcYIcNo5Gyv1xA",
-    authDomain: "code-wiki-52411.firebaseapp.com",
-    databaseURL: "https://code-wiki-52411.firebaseio.com",
-    projectId: "code-wiki-52411",
-    storageBucket: "",
-    messagingSenderId: "291291039551"
+    apiKey: "AIzaSyAkv1EII31rtwpY8JzMl4_ySwTqTrx-LoE",
+    authDomain: "code-wiki-141e7.firebaseapp.com",
+    databaseURL: "https://code-wiki-141e7.firebaseio.com",
+    projectId: "code-wiki-141e7",
+    storageBucket: "code-wiki-141e7.appspot.com",
+    messagingSenderId: "97932018205"
 };
 
 @NgModule({

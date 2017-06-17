@@ -73,8 +73,10 @@ export class CreationFormComponent implements OnInit {
     this.snippet.type = formModel.type;
     this.snippet.username = this.user.name;
     this.snippet.tags = this.tags;
-
+    this.snippet.language = formModel.language;
     this.snippetService.pushSnippet(this.snippet);
+
+    this.createForm();
   }  
 
 }

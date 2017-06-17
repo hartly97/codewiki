@@ -6,8 +6,9 @@
           <div class="box" *ngFor="let snip of snippets; let i = index">
             <article class="media">
               <div class="media-left"  *ngIf="showCode">
-                <i class="devicon-angularjs-plain colored" *ngIf="i%2==0" style="font-size:50px"></i>
-                <i class="devicon-javascript-plain colored" *ngIf="i%2==1" style="font-size:50px"></i>
+                
+                <i class="devicon-angularjs-plain colored" *ngIf="snip.language=='typescript'" style="font-size:50px"></i>
+                <i class="devicon-javascript-plain colored" *ngIf="snip.language=='javascript'" style="font-size:50px"></i>
                 <!--<figure class="image is-64x64">
                   <img src="{{snip.imgUrl}}" alt="Image">
                 </figure>-->
